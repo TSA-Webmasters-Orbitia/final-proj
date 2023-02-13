@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Solitreo&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
+
+html,
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+.handwritten {
+  font-family: "Solitreo", cursive;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6, .brand-font {
+  font-family: "Gugi", serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
