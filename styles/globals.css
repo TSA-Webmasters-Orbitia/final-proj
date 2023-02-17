@@ -22,6 +22,10 @@ h6, .brand-font {
   font-family: "Gugi", serif;
 }
 
+.logo{
+  color: #0095e6;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
