@@ -60,7 +60,7 @@ const Register = ({ users, params }) => {
   }
   return (
     <>
-      <CHead title={"Register | TechLion Dev's Blog"} />
+      <CHead title={"Register"} />
       <div className="h-screen py-8 overflow-y-scroll bg-gray-100">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
         <a
