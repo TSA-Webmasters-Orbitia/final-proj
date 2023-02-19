@@ -4,11 +4,17 @@ const UserDropdown = ({ user, visible }) => {
   if (visible) {
     return (
       <>
-        <div className="z-40 text-center">
-          <div className="flex flex-col items-center justify-center p-4 m-2 font-bold rounded-lg shadow-lg">
+        <div className=" sticky z-40 bg-white top-[106px] text-center">
+          <div className="flex flex-col items-center justify-center gap-2 p-4 m-2 font-bold rounded-lg shadow-lg">
             <p className="py-4 border-b-2 border-gray-300">{user.name}</p>
             <a
-              className="w-full mt-2 font-medium rounded-lg hover:bg-slate-100"
+              className="w-full font-medium rounded-lg hover:bg-slate-100"
+              href="/dashboard"
+            >
+              <p className="py-2">Dashboard</p>
+            </a>
+            <a
+              className="w-full font-medium rounded-lg hover:bg-slate-100"
               href="/settings"
             >
               <p className="py-2">Settings</p>

@@ -11,7 +11,8 @@ export default async function handler(req, res) {
             let user = await prisma.user.create({
                 data: {
                     name : body.name,
-                    email : body.email,
+                    email: body.email,
+                    profileUrl : body.avatarUrl,
                     password: body.password,
                     roles: ['comment']
                 }

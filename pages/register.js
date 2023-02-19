@@ -1,11 +1,12 @@
 import CHead from "@/components/CHead";
 import { useState } from "react";
-import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
+import { getCookies, getCookie, setCookie, deleteCookie } from "cookies-next";
+import { randomIntFromInterval } from "@/utils/Numbers";
 
 const Register = ({ users, params }) => {
   console.log(params);
-  if (getCookie('loggedIn') === true) {
-    window.location.href = '/'
+  if (getCookie("loggedIn") === true) {
+    window.location.href = "/";
   }
   let allUsers = users.users;
   const [errorMsg, setErrorMsg] = useState("");
@@ -18,10 +19,10 @@ const Register = ({ users, params }) => {
     }
   }
   function emailUnique(curr) {
-    let all = []
+    let all = [];
     for (let i = 0; i < allUsers.length; i++) {
       const user = allUsers[i];
-      console.log(user)
+      console.log(user);
       all.push(user.email);
     }
     if (all.includes(curr)) {
@@ -30,6 +31,43 @@ const Register = ({ users, params }) => {
     } else {
       return true;
     }
+  }
+  function numToColor(num) {
+    let color = "blue"
+    switch (num) {
+      case 1:
+        color = "red"
+        break;
+      case 2:
+        color = "yellow"
+        break;
+      case 3:
+        color = "green"
+        break
+      case 4:
+        color = "blue"
+        break;
+      case 5:
+        color = "purple"
+        break;
+    }
+    return color
+  }
+  function getAvatarUrl(name) {
+    let names = name.split(" ");
+    let firstInitial = names[0].substring(0, 1).toUpperCase();
+    let lastInitial = names[names.length - 1].substring(0, 1).toUpperCase();
+    let num = randomIntFromInterval(1, 5);
+    let color = numToColor(num);
+    let url = ``;
+    if (!lastInitial) {
+      url = `https://i2.wp.com/d228am55mqbj0t.cloudfront.net/defaults/${color}-${firstInitial}.png`;
+    } else {
+      url = `https://i2.wp.com/d228am55mqbj0t.cloudfront.net/defaults/${color}-${
+        firstInitial + lastInitial
+      }.png`;
+    }
+    return url;
   }
   async function createAccount(e) {
     e.preventDefault();
@@ -47,14 +85,17 @@ const Register = ({ users, params }) => {
           body: JSON.stringify({
             name: name,
             email: email,
+            avatarUrl: getAvatarUrl(name),
             password: pass,
           }),
         });
         let jres = await fres.json();
         console.log(jres);
-        setCookie('loggedIn', true)
-        setCookie('userId', jres.user.id)
-        params ? window.location.href = `/${params.ref}` : window.location.href = '/'
+        setCookie("loggedIn", true);
+        setCookie("userId", jres.user.id);
+        params.ref
+          ? (window.location.href = `/${params.ref}`)
+          : (window.location.href = "/");
       }
     }
   }
@@ -63,7 +104,7 @@ const Register = ({ users, params }) => {
       <CHead title={"Register"} />
       <div className="h-screen py-8 overflow-y-scroll bg-gray-100">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
-        <a
+          <a
             href="/"
             className="flex items-center mb-6 text-2xl font-semibold text-gray-900 focus:outline-none"
           >
@@ -193,7 +234,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       users: jres,
-      params: context.query
+      params: context.query,
     },
   };
 }

@@ -76,20 +76,35 @@ const Nav = ({ user, loggedIn }) => {
   return (
     <>
       <nav className="sticky top-0 z-50 flex items-center justify-between p-2 px-6 py-4 bg-blue-100 shadow-lg">
-      <div className="menu">
-            <button
-              onClick={() => {
-                setNavMenuOpen(!navMenuOpen);
-              }}
-              className="p-4 rounded-lg hover:bg-blue-200"
-            >
+        <div className="menu">
+          <button
+            onClick={() => {
+              setNavMenuOpen(!navMenuOpen);
+            }}
+            className="p-4 rounded-lg hover:bg-blue-200"
+          >
+            {navMenuOpen ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
               <svg
                 stroke="currentColor"
                 fill="none"
                 stroke-width="0"
                 viewBox="0 0 24 24"
-                height="1em"
-                width="1em"
+                className="w-6 h-6"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -105,8 +120,9 @@ const Nav = ({ user, loggedIn }) => {
                   fill="currentColor"
                 ></path>
               </svg>
-            </button>
-          </div>
+            )}
+          </button>
+        </div>
         <div className="flex justify-center w-full">
           <a href="/">
             <div className="flex flex-row items-center justify-center gap-2 text-center">
@@ -128,26 +144,27 @@ const Nav = ({ user, loggedIn }) => {
           >
             <img
               className="w-12 rounded-full"
-              src="https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png"
+              src={user.profileUrl ? user.profileUrl : "https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png"}
               alt="Placeholder Img"
             />
           </button>
         </div>
       </nav>
-      <div className="sticky z-40 bg-white top-[106px]">
-        <UserDropdown visible={showProfileDropdown} user={user} />
-      </div>
-      {navMenuOpen ? (
-          <div className="sticky z-40 bg-white top-[106px] flex flex-col gap-4 ">
-            <div className="p-4 mx-2 -mt-4 z-[60] bg-blue-100 rounded-lg shadow-lg w-fit">
-              <NavLink text={"Home"} url={"/"} />
-              <NavLink text={"About Us"} url={"/about"} />
-              <NavLink text={"Apply"} url={"/apply"} />
-            </div>
+      {showProfileDropdown ? (
+        ""
+      ) : navMenuOpen ? (
+        <div className="sticky z-40 bg-white top-[106px] flex flex-col gap-4 ">
+          <div className="p-4 mx-2 -mt-4 z-[60] bg-blue-100 rounded-lg shadow-lg w-fit">
+            <NavLink text={"Home"} url={"/"} />
+            <NavLink text={"About Us"} url={"/about"} />
+            <NavLink text={"Apply"} url={"/apply"} />
           </div>
-        ) : (
-          ""
-        )}
+        </div>
+      ) : (
+        ""
+      )}
+        <UserDropdown visible={showProfileDropdown} user={user} />
+    
     </>
   );
 };
