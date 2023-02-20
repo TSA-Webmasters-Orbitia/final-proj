@@ -7,7 +7,7 @@ const Nav = ({ user, loggedIn }) => {
   if (!loggedIn) {
     return (
       <>
-        <nav className="sticky top-0 z-50 flex items-center justify-between p-2 px-6 py-4 bg-blue-100 shadow-lg">
+        <nav className="sticky top-0 z-50 flex items-center justify-between p-2 px-6 py-4 bg-blue-100 rounded-b-lg shadow-lg ">
           <div className="menu">
             <button
               onClick={() => {
@@ -60,7 +60,7 @@ const Nav = ({ user, loggedIn }) => {
           </div>
         </nav>
         {navMenuOpen ? (
-          <div className="sticky z-40 top-[106px] flex flex-col gap-4 w-fit">
+          <div className="fixed z-40 top-[106px] flex flex-col gap-4 w-fit">
             <div className="p-4 mx-2 -mt-4 z-[60] bg-blue-100 rounded-lg shadow-lg w-fit">
               <NavLink text={"Home"} url={"/"} />
               <NavLink text={"About Us"} url={"/about"} />
@@ -75,7 +75,7 @@ const Nav = ({ user, loggedIn }) => {
   }
   return (
     <>
-      <nav className="sticky top-0 z-50 flex items-center justify-between p-2 px-6 py-4 bg-blue-100 shadow-lg">
+      <nav className="sticky top-0 z-50 flex items-center justify-between p-2 px-6 py-4 bg-blue-100 rounded-b-lg shadow-lg ">
         <div className="menu">
           <button
             onClick={() => {
@@ -140,20 +140,55 @@ const Nav = ({ user, loggedIn }) => {
             onClick={() => {
               setShowProfileDropdown(!showProfileDropdown);
             }}
-            className="p-2 rounded-full"
+            className="flex flex-row items-center gap-2 p-2 rounded-full"
           >
             <img
               className="w-12 rounded-full"
-              src={user.profileUrl ? user.profileUrl : "https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png"}
+              src={
+                user.profileUrl
+                  ? user.profileUrl
+                  : "https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png"
+              }
               alt="Placeholder Img"
             />
+            {showProfileDropdown ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4.5 15.75l7.5-7.5 7.5 7.5"
+                />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            )}
           </button>
         </div>
       </nav>
       {showProfileDropdown ? (
         ""
       ) : navMenuOpen ? (
-        <div className="sticky z-40 top-[106px] flex flex-col gap-4">
+        <div className="fixed z-40 top-[106px] flex flex-col gap-4">
           <div className="p-4 mx-2 -mt-4 z-[60] bg-blue-100 rounded-lg shadow-lg w-fit">
             <NavLink text={"Home"} url={"/"} />
             <NavLink text={"About Us"} url={"/about"} />
@@ -163,7 +198,7 @@ const Nav = ({ user, loggedIn }) => {
       ) : (
         ""
       )}
-        <UserDropdown visible={showProfileDropdown} user={user} />
+      <UserDropdown visible={showProfileDropdown} user={user} />
     </>
   );
 };
