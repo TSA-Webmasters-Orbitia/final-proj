@@ -67,7 +67,7 @@ const About = ({ users }) => {
 export default About;
 
 export async function getServerSideProps(context) {
-  let Ufres = await fetch("http://localhost:3000/api/users", {
+  let Ufres = await fetch(context.req.headers.referer + "/api/users", {
     method: "GET",
   });
   let Ujres = await Ufres.json();

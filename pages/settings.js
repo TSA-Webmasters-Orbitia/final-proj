@@ -142,7 +142,7 @@ const Settings = ({ users }) => {
 export default Settings;
 
 export async function getServerSideProps(context) {
-  let fres = await fetch("http://localhost:3000/api/users", {
+  let fres = await fetch(context.req.headers.referer + "/api/users", {
     method: "GET",
   });
   let jres = await fres.json();
