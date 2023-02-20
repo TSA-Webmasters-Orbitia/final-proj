@@ -60,7 +60,7 @@ const Nav = ({ user, loggedIn }) => {
           </div>
         </nav>
         {navMenuOpen ? (
-          <div className="sticky z-40 bg-white top-[106px] flex flex-col gap-4 ">
+          <div className="sticky z-40 top-[106px] flex flex-col gap-4 w-fit">
             <div className="p-4 mx-2 -mt-4 z-[60] bg-blue-100 rounded-lg shadow-lg w-fit">
               <NavLink text={"Home"} url={"/"} />
               <NavLink text={"About Us"} url={"/about"} />
@@ -153,7 +153,7 @@ const Nav = ({ user, loggedIn }) => {
       {showProfileDropdown ? (
         ""
       ) : navMenuOpen ? (
-        <div className="sticky z-40 bg-white top-[106px] flex flex-col gap-4 ">
+        <div className="sticky z-40 top-[106px] flex flex-col gap-4">
           <div className="p-4 mx-2 -mt-4 z-[60] bg-blue-100 rounded-lg shadow-lg w-fit">
             <NavLink text={"Home"} url={"/"} />
             <NavLink text={"About Us"} url={"/about"} />
@@ -164,7 +164,6 @@ const Nav = ({ user, loggedIn }) => {
         ""
       )}
         <UserDropdown visible={showProfileDropdown} user={user} />
-    
     </>
   );
 };

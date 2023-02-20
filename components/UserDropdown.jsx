@@ -4,7 +4,7 @@ const UserDropdown = ({ user, visible }) => {
   if (visible) {
     return (
       <>
-        <div className=" sticky z-40 bg-white top-[106px] text-center">
+        <div className=" sticky z-40 bg-white top-[96px] text-center">
           <div className="flex flex-col items-center justify-center gap-2 p-4 m-2 font-bold rounded-lg shadow-lg">
             <p className="py-4 border-b-2 border-gray-300">{user.name}</p>
             <a
