@@ -1,4 +1,5 @@
 import { getCookies, getCookie, setCookie, deleteCookie } from "cookies-next";
+import Link from "next/link";
 
 const UserDropdown = ({ user, visible }) => {
   if (visible) {

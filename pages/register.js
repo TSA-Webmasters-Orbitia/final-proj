@@ -2,6 +2,7 @@ import CHead from "@/components/CHead";
 import { useState } from "react";
 import { getCookies, getCookie, setCookie, deleteCookie } from "cookies-next";
 import { randomIntFromInterval } from "@/utils/Numbers";
+import Link from "next/link";
 
 const Register = ({ users, params, host }) => {
   console.log(params);

@@ -1,6 +1,8 @@
+import Link from "next/link";
 import { useState } from "react";
 import NavLink from "./NavLink";
 import UserDropdown from "./UserDropdown";
+
 const Nav = ({ user, loggedIn }) => {
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
   const [navMenuOpen, setNavMenuOpen] = useState(false);
