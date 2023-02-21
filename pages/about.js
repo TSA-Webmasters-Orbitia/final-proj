@@ -35,7 +35,7 @@ const About = ({ users }) => {
               before, reaching new frontiers in our solar system and beyond.
             </p>
             <p>
-              Orbitia's spacecraft are designed to be versatile and adaptable,
+              Orbitia&apos;s spacecraft are designed to be versatile and adaptable,
               able to support a wide range of missions, from scientific research
               to commercial transportation to space tourism. Their launch
               vehicles are some of the most reliable and cost-effective in the
