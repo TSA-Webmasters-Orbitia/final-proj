@@ -40,7 +40,7 @@ const Nav = ({ user, loggedIn }) => {
             </button>
           </div>
           <div className="flex justify-center w-full ">
-            <a href="/">
+            <Link href="/">
               <div className="flex flex-row items-center justify-center gap-2 text-center">
                 <img
                   src="https://cdn.orbitia.techlion.dev/logos/png/icon/color.png"
@@ -49,14 +49,14 @@ const Nav = ({ user, loggedIn }) => {
                 />
                 <strong className="text-2xl logo">Orbitia</strong>
               </div>
-            </a>
+            </Link>
           </div>
           <div className="flex justify-end ">
-            <a href="/login">
+            <Link href="/login">
               <button className="p-2 text-white rounded-md bg-sky-500 hover:scale-105">
                 Login
               </button>
-            </a>
+            </Link>
           </div>
         </nav>
         {navMenuOpen ? (
@@ -124,7 +124,7 @@ const Nav = ({ user, loggedIn }) => {
           </button>
         </div>
         <div className="flex justify-center w-full">
-          <a href="/">
+          <Link href="/">
             <div className="flex flex-row items-center justify-center gap-2 text-center">
               <img
                 src="https://cdn.orbitia.techlion.dev/logos/png/icon/color.png"
@@ -133,7 +133,7 @@ const Nav = ({ user, loggedIn }) => {
               />
               <strong className="text-2xl logo">Orbitia</strong>
             </div>
-          </a>
+          </Link>
         </div>
         <div className="flex justify-end ml-0">
           <button

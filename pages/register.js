@@ -104,7 +104,7 @@ const Register = ({ users, params, host }) => {
       <CHead title={"Register"} />
       <div className="h-screen py-8 overflow-y-scroll bg-gray-100">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
-          <a
+          <Link
             href="/"
             className="flex items-center mb-6 text-2xl font-semibold text-gray-900 focus:outline-none"
           >
@@ -114,7 +114,7 @@ const Register = ({ users, params, host }) => {
               alt="logo"
             />
             <h3 className="logo">Orbitia</h3>
-          </a>
+          </Link>
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
@@ -199,12 +199,12 @@ const Register = ({ users, params, host }) => {
                 </button>
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                   Already have an account?{" "}
-                  <a
+                  <Link
                     href="/login"
                     className="font-medium text-blue-600 hover:underline dark:text-blue-500"
                   >
                     Login here
-                  </a>
+                  </Link>
                 </p>
               </form>
               <div

@@ -7,10 +7,9 @@ import { useEffect, useState } from "react";
 const loggedIn = getCookie("loggedIn");
 
 const Settings = ({ users, host }) => {
+  const Router = useRouter()
     if (!loggedIn) {
-        useEffect(() => {
-            window.location.href = '/'
-        },[])
+            Router.push('/')
     }
   let allUsers = users.users;
   let curr;
