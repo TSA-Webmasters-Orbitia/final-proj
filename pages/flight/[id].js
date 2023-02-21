@@ -59,11 +59,11 @@ const Flight = ({ users, flights, id, host }) => {
 export default Flight;
 
 export async function getServerSideProps(context) {
-  let fres = await fetch("http://" + context.req.headers.host + "/api/flights", {
+  let fres = await fetch("https://orbitia.techlion.dev/api/flights", {
     method: "GET",
   });
   let jres = await fres.json();
-  let Ufres = await fetch("http://" + context.req.headers.host + "/api/users", {
+  let Ufres = await fetch("https://orbitia.techlion.dev/api/users", {
     method: "GET",
   });
   let Ujres = await Ufres.json();

@@ -14,7 +14,7 @@ const FlightTypeCard = ({ type, initId, host }) => {
       return;
     }
     console.log(newShipType);
-    let fres = await fetch("http://" + host + "/api/updateShipType", {
+    let fres = await fetch("https://orbitia.techlion.dev/api/updateShipType", {
       method: "POST",
       body: JSON.stringify({
         id: initId,

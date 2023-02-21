@@ -70,7 +70,7 @@ const Apply = ({ users , host}) => {
       error = true;
     }
     if (!error) {
-      let fres = await fetch("http://" + host + "/api/createApplication", {
+      let fres = await fetch("https://orbitia.techlion.dev/api/createApplication", {
         method: "POST",
         body: JSON.stringify({
           takeOff: takeOffD,
@@ -208,7 +208,7 @@ const Apply = ({ users , host}) => {
 export default Apply;
 
 export async function getServerSideProps(context) {
-  let fres = await fetch("http://" + context.req.headers.host + "/api/users", {
+  let fres = await fetch("https://orbitia.techlion.dev/api/users", {
     method: "GET",
   });
   let jres = await fres.json();

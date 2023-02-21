@@ -81,7 +81,7 @@ const Register = ({ users, params, host }) => {
     let uniqueEmail = emailUnique(email);
     if (samePass) {
       if (uniqueEmail) {
-        let fres = await fetch("http://" + host + "/api/createUser", {
+        let fres = await fetch("https://orbitia.techlion.dev/api/createUser", {
           method: "POST",
           body: JSON.stringify({
             name: name,
@@ -228,7 +228,7 @@ const Register = ({ users, params, host }) => {
 export default Register;
 
 export async function getServerSideProps(context) {
-  let fres = await fetch("http://" + context.req.headers.host + "/api/users", {
+  let fres = await fetch("https://orbitia.techlion.dev/api/users", {
     method: "GET",
   });
   let jres = await fres.json();

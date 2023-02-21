@@ -128,7 +128,7 @@ const Login = ({ users }) => {
 export default Login;
 
 export async function getServerSideProps(context) {
-  let fres = await fetch("http://" + context.req.headers.host + "/api/users", {
+  let fres = await fetch("https://orbitia.techlion.dev/api/users", {
     method: "GET",
   });
   let jres = await fres.json();

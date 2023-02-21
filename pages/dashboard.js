@@ -40,12 +40,12 @@ const Dashboard = ({ users, flights, host }) => {
 export default Dashboard;
 
 export async function getServerSideProps(context) {
-  let Ufres = await fetch("http://" + context.req.headers.host + "/api/users", {
+  let Ufres = await fetch("https://orbitia.techlion.dev/api/users", {
     method: "GET",
   });
   let Ujres = await Ufres.json();
   let Ffres = await fetch(
-    "http://" + context.req.headers.host + "/api/flights",
+    "https://orbitia.techlion.dev/api/flights",
     {
       method: "GET",
     }

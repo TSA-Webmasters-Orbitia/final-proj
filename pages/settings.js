@@ -38,7 +38,7 @@ const Settings = ({ users, host }) => {
     let name = e.target.name.value;
     let email = e.target.email.value;
     let password = e.target.password.value;
-    let fres = await fetch("http://" + host + "/api/updateUser", {
+    let fres = await fetch("https://orbitia.techlion.dev/api/updateUser", {
       method: "POST",
       body: JSON.stringify({
         id: curr.id,
@@ -142,7 +142,7 @@ const Settings = ({ users, host }) => {
 export default Settings;
 
 export async function getServerSideProps(context) {
-  let fres = await fetch("http://" + context.req.headers.host + "/api/users", {
+  let fres = await fetch("https://orbitia.techlion.dev/api/users", {
     method: "GET",
   });
   let jres = await fres.json();

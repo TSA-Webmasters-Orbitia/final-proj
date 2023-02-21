@@ -28,7 +28,7 @@ const DateCard = ({ initDate, initTitle, initId, host }) => {
     let id = initId;
     let title = initTitle;
     let newDate = e.target.time.value;
-    let fres = await fetch("http://" + host + "/api/updateDate", {
+    let fres = await fetch("https://orbitia.techlion.dev/api/updateDate", {
       method: "POST",
       body: JSON.stringify({
         id: id,
