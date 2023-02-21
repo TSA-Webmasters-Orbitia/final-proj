@@ -3,7 +3,7 @@ import { useState } from "react";
 import { getCookies, getCookie, setCookie, deleteCookie } from "cookies-next";
 import { randomIntFromInterval } from "@/utils/Numbers";
 
-const Register = ({ users, params }) => {
+const Register = ({ users, params, host }) => {
   console.log(params);
   if (getCookie("loggedIn") === true) {
     window.location.href = "/";
@@ -80,7 +80,7 @@ const Register = ({ users, params }) => {
     let uniqueEmail = emailUnique(email);
     if (samePass) {
       if (uniqueEmail) {
-        let fres = await fetch("http://localhost:3000/api/createUser", {
+        let fres = await fetch("http://" + host + "/api/createUser", {
           method: "POST",
           body: JSON.stringify({
             name: name,
@@ -227,7 +227,7 @@ const Register = ({ users, params }) => {
 export default Register;
 
 export async function getServerSideProps(context) {
-  let fres = await fetch(context.req.headers.referer + "/api/users", {
+  let fres = await fetch("http://" + context.req.headers.host + "/api/users", {
     method: "GET",
   });
   let jres = await fres.json();
@@ -235,6 +235,7 @@ export async function getServerSideProps(context) {
     props: {
       users: jres,
       params: context.query,
+      host: context.req.headers.host
     },
   };
 }

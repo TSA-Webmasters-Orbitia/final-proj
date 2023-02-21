@@ -17,4 +17,14 @@ model User{
   password String
   roles    String[]
   name     String
+  applications Application[] 
+}
+
+model Application{
+  id String @id @default(uuid())
+  takeOff DateTime
+  landing DateTime
+  shipType String
+  astronaut User @relation(fields: [astronautId], references: [id])
+  astronautId String
 }

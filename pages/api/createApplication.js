@@ -8,16 +8,15 @@ export default async function handler(req, res) {
             return;
         case 'POST':
             let body = JSON.parse(req.body)
-            let user = await prisma.user.create({
+            let application = await prisma.application.create({
                 data: {
-                    name : body.name,
-                    email: body.email,
-                    profileUrl : body.avatarUrl,
-                    password: body.password,
-                    roles: ['comment']
+                    takeOff: body.takeOff,
+                    landing: body.landing,
+                    shipType: body.shipType,
+                    astronautId: body.astronautId,
                 }
             })
-            res.status(200).json({user: user})
+            res.status(200).json({application: application})
             return;
     }
 }

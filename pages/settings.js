@@ -1,11 +1,12 @@
 import CHead from "@/components/CHead";
 import Nav from "@/components/Nav";
 import { getCookies, getCookie, setCookie, deleteCookie } from "cookies-next";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const loggedIn = getCookie("loggedIn");
 
-const Settings = ({ users }) => {
+const Settings = ({ users, host }) => {
     if (!loggedIn) {
         useEffect(() => {
             window.location.href = '/'
@@ -38,7 +39,7 @@ const Settings = ({ users }) => {
     let name = e.target.name.value;
     let email = e.target.email.value;
     let password = e.target.password.value;
-    let fres = await fetch("http://localhost:3000/api/updateUser", {
+    let fres = await fetch("http://" + host + "/api/updateUser", {
       method: "POST",
       body: JSON.stringify({
         id: curr.id,
@@ -142,13 +143,14 @@ const Settings = ({ users }) => {
 export default Settings;
 
 export async function getServerSideProps(context) {
-  let fres = await fetch(context.req.headers.referer + "/api/users", {
+  let fres = await fetch("http://" + context.req.headers.host + "/api/users", {
     method: "GET",
   });
   let jres = await fres.json();
   return {
     props: {
       users: jres,
+      host: context.req.headers.host
     },
   };
 }
