@@ -26,10 +26,10 @@ const Login = ({ users }) => {
         setCookie("userId", curr.id);
         window.location.href = "/";
       } else {
-        setErrorMsg("Incorrect Credentials!")
+        setErrorMsg("Incorrect Credentials!");
       }
     } else {
-      setErrorMsg("User Not Found!")
+      setErrorMsg("User Not Found!");
     }
   }
   return (
@@ -48,9 +48,9 @@ const Login = ({ users }) => {
             />
             <h3 className="logo">Orbitia</h3>
           </Link>
-          <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+          <div className="w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+              <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
                 Login
               </h1>
               <form
@@ -63,7 +63,7 @@ const Login = ({ users }) => {
                 <div>
                   <label
                     for="email"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-medium text-gray-900"
                   >
                     Your email
                   </label>
@@ -79,7 +79,7 @@ const Login = ({ users }) => {
                 <div>
                   <label
                     for="password"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-medium text-gray-900"
                   >
                     Password
                   </label>
@@ -94,15 +94,15 @@ const Login = ({ users }) => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  className="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                 >
                   Login
                 </button>
-                <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                <p className="text-sm font-light text-gray-500">
                   Don&apos;t have an account?{" "}
                   <Link
                     href="/register"
-                    className="font-medium text-blue-600 hover:underline dark:text-blue-500"
+                    className="font-medium text-blue-600 hover:underline "
                   >
                     Register here
                   </Link>
@@ -135,7 +135,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       users: jres,
-      host: context.req.headers.host
+      host: context.req.headers.host,
     },
   };
 }

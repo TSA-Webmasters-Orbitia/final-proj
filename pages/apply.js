@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { getCookies, getCookie, setCookie, deleteCookie } from "cookies-next";
 import { useRouter } from "next/router";
 
-const Apply = ({ users , host}) => {
+const Apply = ({ users, host }) => {
   const router = useRouter();
   useEffect(() => {
     if (!getCookie("loggedIn")) {
@@ -61,27 +61,22 @@ const Apply = ({ users , host}) => {
       setErrorMsg("You Can't Land Before You Take Off, Silly");
       error = true;
     }
-    if (
-      landingD.getDate() == takeOffD.getDate() &&
-      landingD.getMonth() == takeOffD.getMonth() &&
-      landingD.getFullYear() == takeOffD.getFullYear()
-    ) {
-      setErrorMsg("You Can't Take Off And Land On The Same Day!");
-      error = true;
-    }
     if (!error) {
-      let fres = await fetch("https://orbitia.techlion.dev/api/createApplication", {
-        method: "POST",
-        body: JSON.stringify({
-          takeOff: takeOffD,
-          landing: landingD,
-          shipType: shipType,
-          astronautId: getCookie("userId")
-        })
-      });
-      let jres = await fres.json()
-      console.log(jres)
-      router.push("/flight/"+jres.application.id)
+      let fres = await fetch(
+        "https://orbitia.techlion.dev/api/createApplication",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            takeOff: takeOffD,
+            landing: landingD,
+            shipType: shipType,
+            astronautId: getCookie("userId"),
+          }),
+        }
+      );
+      let jres = await fres.json();
+      console.log(jres);
+      router.push("/flight/" + jres.application.id);
     }
   }
 
@@ -215,8 +210,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       users: jres,
-      host: context.req.headers.host
-
+      host: context.req.headers.host,
     },
   };
 }
