@@ -4,7 +4,7 @@ const Hero = ({ title, description, primaryBtn, secondaryBtn, primaryBtnLink, se
         <>
             <section class="bg-white ">
     <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-        <div class="mr-auto place-self-center lg:col-span-7">
+        <div class="mr-auto place-self-center lg:col-span-7 gap-4">
             <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl ">{title}</h1>
             <p class="max-w-2xl mb-6 font-medium text-black lg:mb-8 md:text-lg lg:text-xl ">{description}</p>
             <a href={primaryBtnLink} class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">
