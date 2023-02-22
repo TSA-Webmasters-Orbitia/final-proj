@@ -34,25 +34,25 @@ const Register = ({ users, params, host }) => {
     }
   }
   function numToColor(num) {
-    let color = "blue"
+    let color = "blue";
     switch (num) {
       case 1:
-        color = "red"
+        color = "red";
         break;
       case 2:
-        color = "yellow"
+        color = "yellow";
         break;
       case 3:
-        color = "green"
-        break
+        color = "green";
+        break;
       case 4:
-        color = "blue"
+        color = "blue";
         break;
       case 5:
-        color = "purple"
+        color = "purple";
         break;
     }
-    return color
+    return color;
   }
   function getAvatarUrl(name) {
     let names = name.split(" ");
@@ -116,9 +116,9 @@ const Register = ({ users, params, host }) => {
             />
             <h3 className="logo">Orbitia</h3>
           </Link>
-          <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+          <div className="w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0 ">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+              <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
                 Register
               </h1>
               <form
@@ -131,7 +131,7 @@ const Register = ({ users, params, host }) => {
                 <div>
                   <label
                     for="email"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-medium text-gray-900 "
                   >
                     Your Name
                   </label>
@@ -147,7 +147,7 @@ const Register = ({ users, params, host }) => {
                 <div>
                   <label
                     for="email"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-medium text-gray-900"
                   >
                     Your email
                   </label>
@@ -163,7 +163,7 @@ const Register = ({ users, params, host }) => {
                 <div>
                   <label
                     for="password"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-medium text-gray-900"
                   >
                     Password
                   </label>
@@ -179,7 +179,7 @@ const Register = ({ users, params, host }) => {
                 <div>
                   <label
                     for="cpassword"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-medium text-gray-900 "
                   >
                     Confirm password
                   </label>
@@ -194,15 +194,15 @@ const Register = ({ users, params, host }) => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  className="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
                 >
                   Create an account
                 </button>
-                <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                <p className="text-sm font-light text-gray-500 ">
                   Already have an account?{" "}
                   <Link
                     href="/login"
-                    className="font-medium text-blue-600 hover:underline dark:text-blue-500"
+                    className="font-medium text-blue-600 hover:underline "
                   >
                     Login here
                   </Link>
@@ -236,7 +236,7 @@ export async function getServerSideProps(context) {
     props: {
       users: jres,
       params: context.query,
-      host: context.req.headers.host
+      host: context.req.headers.host,
     },
   };
 }
