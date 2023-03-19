@@ -126,7 +126,7 @@ const Nav = ({ user, loggedIn }) => {
           </button>
         </div>
         <div className="flex justify-center w-full">
-          <Link href="/">
+          <Link href="/dashboard">
             <div className="flex flex-row items-center justify-center gap-2 text-center">
               <img
                 src="https://cdn.orbitia.techlion.dev/logos/png/icon/color.png"
@@ -187,9 +187,7 @@ const Nav = ({ user, loggedIn }) => {
           </button>
         </div>
       </nav>
-      {showProfileDropdown ? (
-        ""
-      ) : navMenuOpen ? (
+      {navMenuOpen ? (
         <div className="fixed z-40 top-[106px] flex flex-col gap-4">
           <div className="p-4 mx-2 -mt-4 z-[60] bg-blue-100 rounded-lg shadow-lg w-fit">
             <NavLink text={"Home"} url={"/"} />

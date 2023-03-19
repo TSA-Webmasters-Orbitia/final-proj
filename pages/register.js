@@ -81,7 +81,7 @@ const Register = ({ users, params, host }) => {
     let uniqueEmail = emailUnique(email);
     if (samePass) {
       if (uniqueEmail) {
-        let fres = await fetch("https://orbitia.techlion.dev/api/createUser", {
+        let fres = await fetch("/api/createUser", {
           method: "POST",
           body: JSON.stringify({
             name: name,

@@ -10,5 +10,15 @@ export default async function handler(req, res) {
         case 'POST':
             res.status(500).json({ message: "Route Not Found!" })
             return;
+        case 'DELETE':
+            let flightId = req.query.id
+            let flight = await prisma.application.delete({
+                where: {
+                    id: flightId
+                }
+            })
+            res.status(200).json({ message: "Flight Deleted", flight: flight })
+            return;
+        
     }
 }

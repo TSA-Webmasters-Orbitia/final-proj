@@ -63,7 +63,7 @@ const Apply = ({ users, host }) => {
     }
     if (!error) {
       let fres = await fetch(
-        "https://orbitia.techlion.dev/api/createApplication",
+        "/api/createApplication",
         {
           method: "POST",
           body: JSON.stringify({
@@ -93,7 +93,7 @@ const Apply = ({ users, host }) => {
       <CHead title={"Apply"} />
       <Nav loggedIn={getCookie("loggedIn")} user={curr} />
       <div className="flex flex-col items-center justify-center h-screen overflow-y-scroll">
-        <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0">
+        <div className="w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
               Become An Astronaut
@@ -108,7 +108,7 @@ const Apply = ({ users, host }) => {
               <div>
                 <label
                   for="takeOff"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-2 text-sm font-medium text-gray-900"
                 >
                   When Would You Like To Take Off?
                 </label>
@@ -123,7 +123,7 @@ const Apply = ({ users, host }) => {
               <div>
                 <label
                   for="landing"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-2 text-sm font-medium text-gray-900 "
                 >
                   When Would You Like To Land?
                 </label>
@@ -138,14 +138,14 @@ const Apply = ({ users, host }) => {
               <div>
                 <label
                   for="flightType"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-2 text-sm font-medium text-gray-900"
                 >
                   Select Your Spaceship Type
                 </label>
                 <select
                   required
                   id="underline_select"
-                  className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+                  className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none  focus:outline-none focus:ring-0 focus:border-gray-200 peer"
                 >
                   <option selected className={"font-bold text-center italic"}>
                     {" "}
@@ -179,7 +179,7 @@ const Apply = ({ users, host }) => {
               </div>
               <button
                 type="submit"
-                className="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
               >
                 Apply
               </button>
