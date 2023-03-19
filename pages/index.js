@@ -51,7 +51,8 @@ const Home = ({ users }) => {
         {/* Need Something Here */}
 				<div id='contact'>
 					<Contact />
-				</div>
+        </div>
+        
       </div>
       <Footer/>
 		</>
