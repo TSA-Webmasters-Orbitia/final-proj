@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import Nav from '@/components/Nav';
 import About from '@/components/blocks/About';
+import FAQ from '@/components/blocks/FAQ';
 import Services from '@/components/blocks/Services';
 import Contact from '@/components/blocks/contact';
 
@@ -48,7 +49,9 @@ const Home = ({ users }) => {
 				<div id='services'>
 					<Services />
         </div>
-        {/* Need Something Here */}
+        <div id="faq">
+          <FAQ/>
+        </div>
 				<div id='contact'>
 					<Contact />
         </div>

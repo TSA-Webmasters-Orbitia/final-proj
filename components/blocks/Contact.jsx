@@ -1,7 +1,7 @@
 const Contact = () => {
 	return (
 		<>
-			<section id='contact' className='py-12 '>
+			<section id='contact' className='py-12 bg-gray-100'>
 				<div className='container px-4 mx-auto lg:px-24 xl:px-48'>
 					<div className='mb-12 text-center'>
 						<h2 className='mb-2 text-4xl font-bold'>Contact Us</h2>
@@ -11,7 +11,7 @@ const Contact = () => {
 						<div className='w-full px-4 mb-8 lg:w-1/2'>
 							<h3 className='mb-4 text-xl font-bold'>Get in Touch</h3>
 							<p className='mb-4 text-sm'>
-                            If you have any questions or comments about our products or services, or if you just want to say hello, we&apos;d love to hear from you! Our team is always happy to help, and we&apos;ll do our best to get back to you as quickly as possible.
+							If you have any questions or comments about our products or services, or if you just want to say hello, we&apos;d love to hear from you! Our team is always happy to help, and we&apos;ll do our best to get back to you as quickly as possible.
 							</p>
 							<p className='text-sm'>123 Main Street</p>
 							<p className='text-sm'>Anytown, USA 12345</p>
