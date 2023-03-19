@@ -5,7 +5,7 @@ import Nav from '@/components/Nav';
 import About from '@/components/blocks/About';
 import FAQ from '@/components/blocks/FAQ';
 import Services from '@/components/blocks/Services';
-import Contact from '@/components/blocks/contact';
+import Contact from '@/components/blocks/Contact';
 
 import { getCookie, setCookie, getCookies, deleteCookie } from 'cookies-next';
 
