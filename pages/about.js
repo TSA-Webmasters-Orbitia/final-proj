@@ -1,4 +1,5 @@
 import CHead from "@/components/CHead";
+import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
 
 import { getCookie, setCookie, getCookies, deleteCookie } from "cookies-next";
@@ -21,7 +22,8 @@ const About = ({ users }) => {
     <>
       <CHead title={"Home"} />
       <Nav loggedIn={getCookie("loggedIn")} user={curr} />
-      <div className="h-screen p-4 m-2">
+      <div>
+      <div className="p-4 m-2">
         <div className="flex flex-col items-center justify-center gap-4">
           <h2 className="text-2xl font-bold text-center">About Orbitia</h2>
           <article className="prose text-justify md:prose-lg lg:prose-xl">
@@ -59,6 +61,8 @@ const About = ({ users }) => {
             </p>
           </article>
         </div>
+        </div>
+      <Footer/>
       </div>
     </>
   );

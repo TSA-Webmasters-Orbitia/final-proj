@@ -134,6 +134,7 @@ const Settings = ({ users, host }) => {
             </button>
           </form>
         </div>
+        
       </div>
     </>
   );

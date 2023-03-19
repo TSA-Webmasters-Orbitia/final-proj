@@ -2,6 +2,8 @@ import CHead from '@/components/CHead';
 import DateCard from '@/components/DateCard';
 import FlightTypeCard from '@/components/FlightTypeCard';
 import Nav from '@/components/Nav';
+import Footer from '@/components/Footer';
+
 import { getCookie, setCookie, getCookies, deleteCookie } from 'cookies-next';
 
 const Flight = ({ users, flights, id, host, params }) => {
@@ -33,27 +35,28 @@ const Flight = ({ users, flights, id, host, params }) => {
 		<>
 			<CHead title={'Flight Details'} />
 			<Nav loggedIn={getCookie('loggedIn')} user={curr} />
-			<div className='p-4 m-2'>
-        {params?.ref ? (
-          <a href={`/${params.ref}`}>
-					<button className='flex gap-2 p-2 m-2 font-bold text-blue-500 border border-blue-500 rounded-lg hover:text-blue-700 hover:border-blue-700 hover:gap-4'>
-						<svg
-							xmlns='http://www.w3.org/2000/svg'
-							width='24'
-							height='24'
-							viewBox='0 0 24 24'
-							fill='none'
-							stroke='currentColor'
-							stroke-width='2'
-							stroke-linecap='round'
-							stroke-linejoin='round'
-							class='feather feather-arrow-left'>
-							<line x1='19' y1='12' x2='5' y2='12'></line>
-							<polyline points='12 19 5 12 12 5'></polyline>
-						</svg>
-						Back
-            </button>
-            </a>
+			<div className=''>
+				<div className='p-4 m-2'>
+				{params?.ref ? (
+					<a href={`/${params.ref}`} className=''>
+						<button className='flex gap-2 p-2 m-2 font-bold text-blue-500 border border-blue-500 rounded-lg hover:text-blue-700 hover:border-blue-700 hover:gap-4'>
+							<svg
+								xmlns='http://www.w3.org/2000/svg'
+								width='24'
+								height='24'
+								viewBox='0 0 24 24'
+								fill='none'
+								stroke='currentColor'
+								stroke-width='2'
+								stroke-linecap='round'
+								stroke-linejoin='round'
+								class='feather feather-arrow-left'>
+								<line x1='19' y1='12' x2='5' y2='12'></line>
+								<polyline points='12 19 5 12 12 5'></polyline>
+							</svg>
+							Back
+						</button>
+					</a>
 				) : (
 					''
 				)}
@@ -76,6 +79,8 @@ const Flight = ({ users, flights, id, host, params }) => {
 						<FlightTypeCard host={host} initId={id} type={currF.shipType} />
 					</div>
 				</div>
+				</div>
+				<Footer />
 			</div>
 		</>
 	);
